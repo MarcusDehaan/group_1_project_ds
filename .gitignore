@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -173,7 +172,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
-=======
+
 # OS
 .DS_Store
 
@@ -199,5 +198,4 @@ __pycache__/
 *.h5
 *.zip
 *.tar.gz
->>>>>>> 261c695d67fc7dca447b472880053f2fb243fbe2
-*.csv
+
