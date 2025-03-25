@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -172,3 +173,30 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+=======
+# OS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.ipynb_checkpoints
+
+# Conda/venv
+.env/
+.venv/
+*.env
+*.yaml
+
+# WRDS login
+.pgpass
+
+# Jupyter Notebook metadata
+.ipynb_checkpoints/
+
+# Large files
+*.csv
+*.h5
+*.zip
+*.tar.gz
+>>>>>>> 261c695d67fc7dca447b472880053f2fb243fbe2
