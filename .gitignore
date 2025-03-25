@@ -1,0 +1,25 @@
+# OS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.ipynb_checkpoints
+
+# Conda/venv
+.env/
+.venv/
+*.env
+*.yaml
+
+# WRDS login
+.pgpass
+
+# Jupyter Notebook metadata
+.ipynb_checkpoints/
+
+# Large files
+*.csv
+*.h5
+*.zip
+*.tar.gz
