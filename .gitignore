@@ -200,3 +200,4 @@ __pycache__/
 *.zip
 *.tar.gz
 >>>>>>> 261c695d67fc7dca447b472880053f2fb243fbe2
+*.csv
