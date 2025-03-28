@@ -1,68 +1,58 @@
-# Group 1 Data Science Project - Seminar 2025
+# 📊 Group 1 Project – GXZ Dataset Construction & Analysis
 
-## Overview
+This project replicates and extends the data preparation process used in the Gu, Kelly, and Xiu (2020) paper, *Empirical Asset Pricing via Machine Learning*.
 
-This project replicates the empirical asset pricing study **"Machine Learning in Empirical Asset Pricing"** by Gu, Kelly, and Xiu (2020, Review of Financial Studies). It focuses on applying and comparing machine learning techniques in empirical asset pricing problems, specifically using stock-level data and predictive characteristics.
-
-## Data Preparation
-
-The dataset is composed of **209 predictive firm-level characteristics** in wide format, signed so that future mean returns increase with the characteristics.
-
-- **Signed Predictors Dataset**: 1.6 GB zipped CSV containing 209 predictive characteristics
-- **Missing Data**: Omits Price, Size, and STReversal, which can be downloaded from CRSP.
-- The code to automate the download process is available on the website.
-
-### Where to Download the Data
-
-Download the signed predictors dataset from [here](https://www.openassetpricing.com/data/), under **Featured Stock-level Signal Datasets**.
-
-1. **File**: 1.6 GB zipped CSV
-2. **Additional Notes**: The dataset omits Price, Size, and STReversal, which are available from CRSP.
+We use CRSP data from WRDS, and firm characteristics from [Dacheng Xiu’s GXZ data site](https://dachxiu.chicagobooth.edu/) to build a monthly panel of equity-level predictors.
 
 ---
 
-## How to Use This Notebook
+## 📁 What's in This Repo
 
-You can use the `dataset_creation_script.ipynb` notebook in two ways:
-
-### Option 1: Use Existing `.parquet` Files
-
-1. Clone this repository.
-2. Install required Python packages:
-   ```bash
-   pip install pandas numpy scikit-learn pyarrow
-   ```
-3. Open the notebook and skip to **Block 2** to load and test the prepared dataset.
-
-### Option 2: Rebuild the Dataset (Requires WRDS)
-
-1. Get access to [WRDS](https://wrds-www.wharton.upenn.edu/) (Wharton Research Data Services).
-2. Download the signed predictors dataset from [here](https://www.openassetpricing.com/data/), under **Featured Stock-level Signal Datasets**:
-   - **209 predictive firm-level characteristics** in wide format, signed so future mean returns increase in characteristics (1.6 GB zipped CSV).
-   - Omits **Price**, **Size**, and **STReversal**, which can be downloaded from CRSP.
-   - Code to automate the download is available on the website.
-3. Install required Python packages:
-   ```bash
-   pip install pandas numpy scikit-learn pyarrow wrds
-   ```
-4. Open the notebook and run **Block 1** to build the dataset, then run **Block 2** to test the dataset.
+- `dataset_yearly_parquet/`: Cleaned, standardized panel data split by year (`1957–2021`)
+- `data_construction_notebook.ipynb`: 
+  - Block 1: Build the dataset manually from WRDS + GXZ predictors
+  - Block 2: Load prebuilt `.parquet` files + run diagnostics
 
 ---
 
-## Required Python Packages
+## 🔨 How to Use
 
-To ensure the notebook runs correctly, please install the following packages:
+### Option 1: 🛠️ Build Dataset from Scratch (WRDS Access Required)
+1. Download the GXZ predictors CSV from [here](https://dachxiu.chicagobooth.edu/)
+2. Update the CSV path in the notebook
+3. Run Block 1 (`wrds.Connection()` + `.raw_sql(...)`) to fetch CRSP and merge
+
+### Option 2: 💾 Use Prebuilt Parquet Files
+1. Clone this repo
+2. Set `parquet_path` in Block 2 of the notebook
+3. Load, validate, and begin modeling!
+
+---
+
+## 📊 Quick Stats
+- ✅ Covers: 1957–2021
+- ✅ ~105 predictors (GXZ + CRSP)
+- ✅ Standardized monthly by cross-section
+- ✅ Includes benchmark 3-factor model diagnostics
+
+---
+
+## ⚙️ Dependencies
+
+Install required packages using:
 
 ```bash
 pip install pandas numpy scikit-learn pyarrow wrds
-```
+
 
 ---
 
-## Credits
+### ✅ To update your README:
 
-This repository and project are based on the paper:
-
-- **Gu, Kelly, and Xiu (2020)**, "Machine Learning in Empirical Asset Pricing", *Review of Financial Studies*.
-
-Please cite the paper if you are using this data in your work.
+```bash
+cd path/to/group_1_project_ds
+nano README.md  # or open in VS Code or any editor
+# paste the new content
+git add README.md
+git commit -m "Update README with usage and documentation"
+git push origin main
