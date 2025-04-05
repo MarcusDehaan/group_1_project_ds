@@ -199,3 +199,5 @@ __pycache__/
 *.zip
 *.tar.gz
 
+config.yaml
+data.db
