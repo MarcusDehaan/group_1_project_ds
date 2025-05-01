@@ -57,7 +57,7 @@ If computational resources are limited:
 Apply different model types as desired:
 
 **Linear Benchmarks**:
-- `ols3_final.ipynb`: Standard OLS with or without control variables
+- `ols3_final.ipynb`: Standard OLS with 3 predictors
 
 **Dimensionality Reduction + Regularization**:
 - `ols-pls-pcr-enet-random-forest.ipynb`: PLS, PCR, Elastic Net, Random Forest
