@@ -27,7 +27,7 @@ This repository replicates and extends the data preparation and modeling pipelin
 - `gbrt.ipynb`: Implements Gradient Boosted Regression Trees  
 - `glm-3_simplified-glm_full-glm.ipynb`: Contains compiled GLM-based models for return direction prediction  
 - `ols-pls-pcr-enet-random-forest.ipynb`: Runs OLS, PLS, PCR, Elastic Net, and Random Forest models  
-- `ols3_final.ipynb`: Runs benchmark OLS models with and without control variables  
+- `ols3.ipynb`: Runs benchmark OLS models with and without control variables  
 - `train_nn_final.ipynb`: Trains deep neural networks on the panel dataset
 
 ## How to Use This Repository
@@ -57,7 +57,7 @@ If computational resources are limited:
 Apply different model types as desired:
 
 **Linear Benchmarks**:
-- `ols3_final.ipynb`: Standard OLS with 3 predictors
+- `ols3.ipynb`: Standard OLS with 3 predictors
 
 **Dimensionality Reduction + Regularization**:
 - `ols-pls-pcr-enet-random-forest.ipynb`: PLS, PCR, Elastic Net, Random Forest
