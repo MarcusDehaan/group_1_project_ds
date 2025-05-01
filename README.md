@@ -28,7 +28,7 @@ This repository replicates and extends the data preparation and modeling pipelin
 - `glm-3_simplified-glm_full-glm.ipynb`: Contains compiled GLM-based models for return direction prediction  
 - `ols-pls-pcr-enet-random-forest.ipynb`: Runs OLS, PLS, PCR, Elastic Net, and Random Forest models  
 - `ols3.ipynb`: Runs benchmark OLS models with and without control variables  
-- `train_nn_final.ipynb`: Trains deep neural networks on the panel dataset
+- `neural_net.ipynb`: Trains deep neural networks on the panel dataset
 
 ## How to Use This Repository
 
@@ -56,7 +56,7 @@ Apply different model types as desired:
 - `ols-pls-pcr-enet-random-forest.ipynb`: PLS, PCR, Elastic Net, Random Forest
 
 **Neural Networks**:
-- `train_nn_final.ipynb`: Fully connected deep learning model
+- `neural_net.ipynb`: Fully connected deep learning model
 
 **Probabilistic Models (Direction of Return)**:
 - `glm-3_simplified-glm_full-glm.ipynb`: Logistic models including basic, simplified, and full GLMs
