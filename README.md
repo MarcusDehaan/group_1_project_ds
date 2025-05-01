@@ -32,19 +32,12 @@ This repository replicates and extends the data preparation and modeling pipelin
 
 ## How to Use This Repository
 
-### Step 1: Build or Load the Dataset
+### Step 1: Build the Dataset
 
-You have two options:
-
-**Option A**: Build from Scratch (requires WRDS and GXZ access)  
+Build from Scratch (requires WRDS and GXZ access)  
 - Download firm characteristics from [GXZ Data](https://dachxiu.chicagobooth.edu/#data)  
 - Run `create_data.ipynb` to construct the full panel of predictors and export yearly `.parquet` files  
 - This step requires WRDS credentials for CRSP access
-
-**Option B**: Use Prebuilt `.parquet` Files  
-- Clone this repository  
-- Set the appropriate path in any model notebook to point to the stored `.parquet` files  
-- Load the data and begin modeling
 
 ### Step 2: Optional Data Filtering (For Efficiency)
 
