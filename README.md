@@ -23,13 +23,12 @@ This repository replicates and extends the data preparation and modeling pipelin
 
 ## Repository Structure
 
-- `data_construction_notebook.ipynb`: Builds or loads the predictor panel  
-- `data_filtering.ipynb`: Optionally filters dataset by removing firms in the bottom 20% of 2016 GDP, reducing computational burden  
-- `ols3_final.ipynb`: Estimates benchmark OLS models with and without controls  
-- `ols-pls-pcr-enet-random-forest.ipynb`: Fits and compares several linear and ensemble models  
-- `train_nn_final.ipynb`: Trains deep neural networks on the panel data  
-- `glm3.ipynb`, `simplified_glm.ipynb`, `full_glm.ipynb`: Logistic models for direction prediction  
-- `gbrt.ipynb`: Gradient Boosted Regression Trees modeling script
+- `create_data.ipynb`: Builds the full dataset and exports yearly `.parquet` files used by all modeling notebooks  
+- `gbrt.ipynb`: Implements Gradient Boosted Regression Trees  
+- `glm-3_simplified-glm_full-glm.ipynb`: Contains compiled GLM-based models for return direction prediction  
+- `ols-pls-pcr-enet-random-forest.ipynb`: Runs OLS, PLS, PCR, Elastic Net, and Random Forest models  
+- `ols3_final.ipynb`: Runs benchmark OLS models with and without control variables  
+- `train_nn_final.ipynb`: Trains deep neural networks on the panel dataset
 
 ## How to Use This Repository
 
@@ -39,20 +38,19 @@ You have two options:
 
 **Option A**: Build from Scratch (requires WRDS and GXZ access)  
 - Download firm characteristics from [GXZ Data](https://dachxiu.chicagobooth.edu/#data)  
-- Run `data_construction_notebook.ipynb` to fetch CRSP data and merge with predictors  
-- This step requires a WRDS username/password
+- Run `create_data.ipynb` to construct the full panel of predictors and export yearly `.parquet` files  
+- This step requires WRDS credentials for CRSP access
 
-**Option B**: Use Preprocessed `.parquet` Files  
+**Option B**: Use Prebuilt `.parquet` Files  
 - Clone this repository  
-- Set the correct file paths in `data_construction_notebook.ipynb` Block 2  
-- Load the dataset and proceed to modeling
+- Set the appropriate path in any model notebook to point to the stored `.parquet` files  
+- Load the data and begin modeling
 
 ### Step 2: Optional Data Filtering (For Efficiency)
 
 If computational resources are limited:  
-- Open and run `data_filtering.ipynb`  
-- This notebook removes all firm-months for firms in the bottom 20% of 2016 GDP  
-- Resulting data is smaller but preserves the structure and statistical properties
+- Use the GDP-based filter inside your own workflow (refer to legacy `data_filtering.ipynb` if needed)  
+- This filter removes all firm-months associated with the bottom 20% of 2016 GDP-ranked firms
 
 ### Step 3: Modeling
 
@@ -68,7 +66,7 @@ Apply different model types as desired:
 - `train_nn_final.ipynb`: Fully connected deep learning model
 
 **Probabilistic Models (Direction of Return)**:
-- `glm3.ipynb`, `simplified_glm.ipynb`, `full_glm.ipynb`: Logistic models
+- `glm-3_simplified-glm_full-glm.ipynb`: Logistic models including basic, simplified, and full GLMs
 
 **Tree-Based Models**:
 - `gbrt.ipynb`: Gradient Boosted Regression Trees
